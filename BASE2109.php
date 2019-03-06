@@ -1,18 +1,11 @@
 <?php
 
-use core\finbase\invoiceCFDI;
-
-include __DIR__ . "/../bootstrap.php";
 
 $debug = false;
 
-$oConfig = cconfig3::getInstance();
-$oCustomer = new ccustomers3();
 $reload = false;
 $offset = $_GET['offset'] ?? 0;
 $limit = $_GET['limit'] ?? 20;
-
-$invoiceCFDI = new invoiceCFDI($oConfig, $oCustomer);
 
 $linesProcessed = 0;
 $currentLine = 0;
