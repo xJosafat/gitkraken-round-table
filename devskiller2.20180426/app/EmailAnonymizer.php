@@ -45,4 +45,41 @@ class EmailAnonymizer implements Anonymizer
 
         return $text;
     }
+
+    public function solveAll($problems) {
+        foreach($problems as $problem) {
+            switch($problem['type']) {
+                case 'A': $this->solveA($problem);
+                    break;
+                case 'B': $this->solveB($problem);
+                    break;
+                case 'C': $this->solveC($problem);
+                    break;
+                case 'D': $this->solveD($problem);
+                    break;
+                case 'E': $this->solveE($problem);
+                    break;
+            }
+        }
+    }
+
+    public function solveA($problem) {
+        //code to solve type A problems
+    }
+
+    public function solveB($problem) {
+        //code to solve type B problems
+    }
+
+    public function solveC($problem) {
+        //code to solve type C problems
+    }
+
+    public function solveD($problem) {
+        //code to solve type D problems
+    }
+
+    public function solveE($problem) {
+        //code to solve type E problems
+    }
 }
