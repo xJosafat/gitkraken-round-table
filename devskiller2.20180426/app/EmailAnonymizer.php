@@ -14,7 +14,7 @@ class EmailAnonymizer implements Anonymizer
     /**
      * @var string
      */
-    private $replacement;
+    private $wordsToReplace;
     
     /**
      * PhoneNumberAnonymizer constructor.
@@ -22,24 +22,28 @@ class EmailAnonymizer implements Anonymizer
      */
     public function __construct($replacement)
     {
-        $this->replacement = $replacement;
+        $this->wordsToReplace = $replacement;
     }
-    
+
     /**
      * @param string $text
+     * @param int $times
      * @return array of string
      */
-    public function anonymize($text)
+    public function anonymize($text, $times = 5)
     {
+        // -todo- extract rules from database
 
         $html = $text;
         $needle = "@";
         $lastPos = 0;
         $positions = array();
 
-        while (($lastPos = strpos($html, $needle, $lastPos))!== false) {
+        while (($lastPos = strpos($html, $needle, $lastPos))!== false && $times<=5) {
             $positions[] = $lastPos;
             $lastPos = $lastPos + strlen($needle);
+
+            $times++;
         }
 
 
