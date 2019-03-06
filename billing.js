@@ -84,4 +84,12 @@ $(function() {
         var e = d + c;
         alert(e);
     }
+
+    function bar(a, b, c) {
+        a++;
+        b+=c;
+        var d=a+b;
+        var e = d + c;
+        alert(e);
+    }
 });
