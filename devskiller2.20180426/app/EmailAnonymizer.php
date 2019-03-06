@@ -14,7 +14,7 @@ class EmailAnonymizer implements Anonymizer
     /**
      * @var string
      */
-    private $replacement;
+    private $_replacement;
     
     /**
      * PhoneNumberAnonymizer constructor.
@@ -22,7 +22,7 @@ class EmailAnonymizer implements Anonymizer
      */
     public function __construct($replacement)
     {
-        $this->replacement = $replacement;
+        $this->_replacement = $replacement;
     }
     
     /**
