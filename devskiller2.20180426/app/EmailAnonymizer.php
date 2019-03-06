@@ -24,13 +24,16 @@ class EmailAnonymizer implements Anonymizer
     {
         $this->_replacement = $replacement;
     }
-    
+
     /**
-     * @param string $text
-     * @return array of string
+     *
+     * @param $text
+     *
+     * @return string
      */
     public function anonymize($text)
     {
+        // -todo- extract rules from database
 
         $html = $text;
         $needle = "@";
